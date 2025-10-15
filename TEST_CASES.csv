@@ -1,0 +1,11 @@
+Suite,Module,Feature,ID,Title,Preconditions,Steps,Expected,Priority,Tags,Device(OS),Automation
+Smoke,App,Launch & Permissions,DRV-001,App launches and handles permissions,Clean install,Open app Handle prompts,Home/login ready,P1,Smoke,Android,Yes
+Smoke,Auth,Login,DRV-010,Login with valid OTP/creds,On login,Enter creds/OTP,Home visible; session token,P1,Smoke,Android,Yes
+Smoke,Availability,Go Online,DRV-020,Toggle Go Online status,Logged in,Tap Go Online,Status=Online,P1,Status,Android,Yes
+Smoke,Bidding,Accept/Bid,DRV-030,Accept incoming request,Online,Wait for request Accept,Trip card visible,P1,Bidding,Android,Yes
+Smoke,Navigation,Arrive Pickup,DRV-040,Arrive at pickup,Assigned,Navigate Arrived,State=Arrived; ETA,P1,Maps,Android,Yes
+Smoke,Trip,Start Trip,DRV-050,Start trip,Arrived,Tap Start,State=In-Trip,P1,Trip,Android,Yes
+Smoke,Trip,Complete Trip,DRV-060,Complete trip,In-Trip,Navigate Complete,State=Completed; fare,P1,Trip,Android,Yes
+Smoke,Wallet,Earnings,DRV-070,Earnings refresh,Completed,Open Wallet,Balance updated,P2,Wallet,Android,Yes
+Negative,GPS,Guidance,DRV-090,Online with GPS off,Logged in; GPS off,Toggle Online,Guidance toast; stays Offline,P1,Negative;GPS,Android,Yes
+Negative,Network,Retry,DRV-100,Accept during network loss,Online,Airplane Mode Accept,Clear error; retry after reconnect,P1,Negative;Network,Android,Yes
